@@ -3,6 +3,7 @@
  * 
  * @param {HTMLCanvasElement} canvas The canvas element used for drawing the robot arm on.
  */
+var timer = 0
 var RobotArm = function (canvas) {
     // So we can reference this when we are inside other functions
     var self = this;
@@ -16,7 +17,7 @@ var RobotArm = function (canvas) {
     // The amount of rows to use
     self.rows = 8;
     // The speed of which the animations go
-    self.speed = 50;
+    self.speed = 300;
 
     // List of animations
     local.animationList = [];
