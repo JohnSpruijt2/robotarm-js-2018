@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <script src="robot-arm.js"></script>
+        <script>
+            //Robotarm bibliotheek inladen
+            var canvas = document.getElementById("canvas");
+            var robotArm = new RobotArm(canvas);
+            
+            //Het level inladen
+            robotArm.randomLevel( 1, 8);
+            
+            // Jou instructies volgen hier
+
+            // De door jou opgegeven instructies uitvoeren
+            robotArm.run();
+            for(timer2=0; timer2<6; timer2++){
+
+                robotArm.grab();
+                var color = robotArm.scan();
+                if (color == "red") {
+                for(timer=0+timer2; timer<9; timer++){
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for(timer3=0+timer2; timer3<9; timer3++){
+                    robotArm.moveLeft();
+                }
+                }
+                else if (color == "green") {
+                for(timer=0+timer2; timer<9; timer++){
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for(timer3=0+timer2; timer3<9; timer3++){
+                    robotArm.moveLeft();
+                }
+                }
+                else if (color == "blue") {
+                for(timer=0+timer2; timer<9; timer++){
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for(timer3=0+timer2; timer3<9; timer3++){
+                    robotArm.moveLeft();
+                }
+                }
+                else if (color == "white") {
+                for(timer=0+timer2; timer<9; timer++){
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for(timer3=0+timer2; timer3<9; timer3++){
+                    robotArm.moveLeft();
+                }
+                }
+            }
+            
+            
+        </script>
+    </body>
+</html>
