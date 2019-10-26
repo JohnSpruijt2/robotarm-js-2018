@@ -14,15 +14,27 @@
 
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
-            for(timer=0; timer<9;timer++){
-            robotArm.moveRight();
-            robotArm.grab();
-            var color = robotArm.scan();
-            if (color == "white") {
+            for(timer=0; timer<9; timer++) {
                 robotArm.moveRight();
             }
-            robotArm.drop();
+            for(timer=0; timer<9; timer++){
+                robotArm.grab();
+                colour = robotArm.scan();
+            if (colour == "white") {
+                robotArm.moveRight();
+                robotArm.drop();
+                robotArm.moveLeft();
+                robotArm.moveLeft();
             }
+            else {
+                robotArm.drop();
+                robotArm.moveLeft();
+            }
+            }
+            
+            
+
+            
             
         </script>
     </body>
